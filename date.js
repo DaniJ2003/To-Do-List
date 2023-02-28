@@ -5,7 +5,7 @@ exports.getDate = function() {
         month: "long"
     };
     const today = new Date();
-    return today.toLocaleDateString("en-US", options);
+    return today.toLocaleDateString("en-US", options); 
 }
 
 exports.getDay = function() {

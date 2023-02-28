@@ -7,7 +7,9 @@
 <div class="box">
     <% for(i = 0; i<NewListItem.length; i++) { %>
         <div class="item">
-            <input type="checkbox">
+            <form action="/delete" class="item" method="post">
+                <input type="checkbox" name="CBox" onclick="this.form.submit()" value="<%= NewListItem[i]%>">
+            </form>
             <p> <%= NewListItem[i] %> </p>
         </div>
     <% } %>
