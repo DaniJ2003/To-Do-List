@@ -14,7 +14,13 @@ app.use(express.static("public"));
 mongoose.set('strictQuery', false);
 
 //DB connection
-mongoose.connect("mongodb+srv://pauldanielee20:Daniel2003%40%40%40@to-do-list.9lpdam1.mongodb.net/test", {useNewUrlParser: true});
+
+mongoose.connect(process.env.MongoDB_URI, {useNewUrlParser: true}).then(() =>{
+    console.log("Connected to DB");
+})
+.catch((err)=>{
+    console.log(err);
+})
 
 //DB Schema
 const listSchema = new mongoose.Schema({
