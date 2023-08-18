@@ -4,19 +4,27 @@
     <h1> <%= listTitle %> </h1>
 </div>
 
-<div class="box">
+<div class="box" id="box">
     <% for(i = 0; i<NewListItem.length; i++) { %>
         <div class="item">
+            <section class="item">
+                <button id="edit" class="checkbox fa-solid fa-pen-to-square" name="EBox"></button>
+            </section>
             <form action="/delete" class="item" method="post">
-                <input type="checkbox" name="CBox" onclick="this.form.submit()" value="<%= NewListItem[i]%>">
+                <button id="delete" class="checkbox fa-solid fa-trash" name="CBox" onclick="this.form.submit()" value="<%= NewListItem[i].id %>"></button>
             </form>
-            <p> <%= NewListItem[i] %> </p>
+            <form action="/update" class="item" method="post">
+                <input id="fieldItem" name="editInp" value="<%= NewListItem[i].name %>" onblur="this.form.submit()" disabled></input>
+                <input type="hidden" name="editId" value="<%= NewListItem[i].id %>">
+            </form>
         </div>
     <% } %>
     <form class="item" action="/" method="post">
         <input type="text" name="newList" placeholder="New Item" autocomplete="off">
-        <button type="submit" name="list" value=<%= listTitle %>>+</button>
+        <button id="addBtn" type="submit" name="list" value=<%= listTitle %>>+</button>
     </form>
 </div>
+
+<script src="/script.js"></script>
 
 <%- include("footer") -%>

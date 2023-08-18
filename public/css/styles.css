@@ -35,8 +35,9 @@ h1 {
   border-bottom: 1px solid #F1F1F1;
 }
 
-.item:last-child {
+form.item {
   border-bottom: 0;
+  margin-left: 10px;
 }
 
 input:checked+p {
@@ -45,15 +46,29 @@ input:checked+p {
 }
 
 input[type="checkbox"] {
-  margin: 20px;
+  /* margin: 20px; */
+  display: none;
 }
 
-p {
+.checkbox {
+  border-style: none;
+  background-color: transparent;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+#fieldItem {
   margin: 0;
   padding: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  position:relative;
+  /* display: inline; */
   font-size: 20px;
   font-weight: 200;
   color: #00204a;
+  background-color: transparent;
+  border: 0;
 }
 
 form {
@@ -61,7 +76,16 @@ form {
   margin-left: 20px;
 }
 
-button {
+input#fieldItem {
+  width: 270px;
+}
+
+section {
+  text-align: center;
+  margin-left: 20px;
+}
+
+#addBtn {
   min-height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -99,4 +123,37 @@ footer {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
   bottom: 0;
+}
+
+/* input:disabled {
+  border: none;
+  background-color: transparent;
+} */
+
+#edit {
+  color: #017c71;
+}
+
+#edit:hover {
+  cursor:grab;
+  color: #3a936b;
+}
+
+#delete {
+  color: #e5574a;
+}
+
+#delete:hover {
+  cursor:grab;
+  color: #ff7131;
+}
+
+.clicked {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #A683E3;
+}
+
+::selection {
+  background-color: #A683E3;
+  color: whitesmoke;
 }
